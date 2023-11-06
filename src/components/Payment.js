@@ -67,9 +67,11 @@
 // export default Payment;
 
 import { List } from "@mui/icons-material";
+import { Button, Typography } from "@mui/material";
 import ListItem from "@mui/material/ListItem";
 import ListItemText from "@mui/material/ListItemText";
 import React from "react";
+import './Style.css'
 
 function Payment() {
   const products = [
@@ -92,14 +94,15 @@ function Payment() {
       <div
         style={{
           background: "linear-gradient(#3C0850A1,#E9353542)",
-          padding: "30px",
+          padding: "20px",
         }}
       >
         <div
           style={{
             background: "linear-gradient(#DCDEEA,#FFFFFF00)",
             borderRadius: "20px",
-            padding: "20px",
+            padding: "80px",
+            paddingBottom:'3px'
           }}
         >
           {" "}
@@ -108,12 +111,13 @@ function Payment() {
               key={index}
               style={{
                 display: "flex",
-                justifyContent: "space-around",
+                justifyContent: "space-between",
                 fontFamily: "Poppins",
+                padding:'20px'
               }}
             >
-              <h3>{product.x}</h3>
-              <p>{product.y}</p>
+              <Typography variant="h5">{product.x}</Typography>
+              <Typography variant="h6">{product.y}</Typography>
             </div>
           ))}
         </div>
@@ -121,8 +125,10 @@ function Payment() {
           style={{
             // display: "flex",
             // justifyContent: "space-around",
+            // flexDirection:'column',
             background: "white",
-            padding: "30px",
+            padding: "100px",
+            paddingTop:'3px',
             borderRadius: "20px",
           }}
         >
@@ -131,14 +137,33 @@ function Payment() {
               key={index}
               style={{
                 display: "flex",
-                justifyContent: "space-around",
-                fontFamily: "Poppins",
+                justifyContent: "space-between",
+                alignItems:'center',
+                textJustify:'auto',
+                padding:'15px'
+                // gap: 50,
+                // fontFamily: "Poppins",
+                // fontSize:'2vw'   
               }}
             >
-              <h3>{money.a}</h3>
-              <p>{money.b}</p>
+              <Typography variant="h5">{money.a}</Typography>
+              <Typography variant="h6">{money.b}</Typography>
             </div>
           ))}
+        </div> <br />
+        <div
+          style={{
+          //   background: "linear-gradient(180deg, #46096B 0%, #6B0909 100%)",
+          //   textAlign: "center",
+          //   width: "200px",
+          //   borderRadius:'20px',
+            display:'flex',
+            justifyContent:'center',
+            alignItems:'center'
+          }}
+        >
+          <Button className="markodenic-button">Pay Now</Button>
+          
         </div>
       </div>
     </div>

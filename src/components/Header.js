@@ -264,7 +264,7 @@ export default function Header() {
               }}
             >
               <a href="#" className="atag" style={{ fontSize: "1.2vw" }}>
-                <img src={home} alt="'" height={25} width={25} />
+                <img src={home} alt="'" height={20} width={20} />
                 Home
               </a>
 

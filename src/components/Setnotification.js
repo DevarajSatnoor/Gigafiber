@@ -26,7 +26,7 @@ function Setnotification() {
   };
 
   return (
-    <div style={{ background: "white" }}>
+    <div style={{ background: "white",display:'flex',justifyContent:'center',alignItems:'center' }}>
       <div
         style={{
           background: "linear-gradient(#460C4F73,#4F0C0CC2)",
@@ -37,11 +37,16 @@ function Setnotification() {
           lineHeight: "28px",
           letterSpacing: "0em",
           textAlign: "center",
-          padding: "20px",
+          padding: "40px",
+          width:'100%',
+          display:'flex',
+          alignItems:'center',
+          justifyContent:'center'
+
         }}
       >
         <div
-          style={{ background: "#FFFFFF", borderRadius: "20px", width: "100%" }}
+          style={{ background: "#FFFFFF", borderRadius: "20px", width: "100%",padding:'50px',paddingTop:'20px' }}
         >
           <p>Notification</p>
           <List

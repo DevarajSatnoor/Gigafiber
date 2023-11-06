@@ -2,19 +2,22 @@ import React from "react";
 
 function Agreement() {
   return (
-    <div style={{ background: "white" }}>
+    <div style={{ background: "white",display:'flex',alignItems:"center",justifyContent:'center' }}>
       <div
         style={{
           background: "linear-gradient(#460C4F73,#4F0C0CC2)",
           padding: "20px",
+          display:'flex',alignItems:"center",justifyContent:'center'
         }}
       >
         <div
           style={{
             background: "white",
             borderRadius: "40px",
-            fontSize: "2vw",
+            fontSize: "1.4vw", 
             fontFamily: "'Poppins', sans-serif ",
+            textJustify:'none',
+            textOverflow:"clip"
           }}
         >
           <header

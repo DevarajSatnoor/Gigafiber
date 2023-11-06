@@ -113,3 +113,38 @@
 }
 
 
+.markodenic-button {
+    min-width: 160px;
+    height: 40px;
+    color: white;
+    padding: 5px 10px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    /* left: 45%; */
+    display: inline-block;
+    outline: none;
+    border-radius: 5px;
+    border: none;
+    background-size: 120% auto;
+    background-image: linear-gradient(315deg, #7b4397 0%, #dc2430 75%);
+    /* color: white; */
+  }
+  .markodenic-button:hover {
+    background-position: right center;
+  }
+  .markodenic-button:active {
+    top: 2px;
+  }
+
+  .text{
+    /* text-align: center; */
+    /* text-align-last: auto; */
+    /* text-justify: auto; */
+    /* font-family: 'Poppins'; */
+    /* font-family: 'Poppins',sans-serif; */
+    font-size: 2vw;
+  }
+
+
