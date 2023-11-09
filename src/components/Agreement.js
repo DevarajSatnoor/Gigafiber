@@ -14,9 +14,8 @@ function Agreement() {
           style={{
             background: "white",
             borderRadius: "40px",
-            fontSize: "1.4vw", 
+            fontSize: "0.8rem", 
             fontFamily: "'Poppins', sans-serif ",
-            textJustify:'none',
             textOverflow:"clip"
           }}
         >
@@ -24,7 +23,7 @@ function Agreement() {
             style={{
               position: "relative",
               left: "50px",
-              fontSize: "3vw",
+              fontSize: "1.7rem ",
               padding: "10px",
             }}
           >
@@ -32,12 +31,12 @@ function Agreement() {
           </header>
           <dl>
             <dt
-              style={{ position: "relative", left: "25px", fontSize: "2.5vw" }}
+              style={{ position: "relative", left: "25px", fontSize: "1.4rem" }}
             >
               1. Types data we collect
             </dt>{" "}
             <br />
-            <dd>
+            <dd style={{textAlign:'justify',height:'100vh',margin:'10px'}}>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
               enim ad minim veniam, quis nostrud exercitation ullamco laboris

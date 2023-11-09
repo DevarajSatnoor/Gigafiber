@@ -49,39 +49,38 @@ const Datausage = () => {
             className="date"
           />
         </div> */}
-        <div className="main-container">
-      <form className="container" action="">
-        <div className="container1">
-          <fieldset className="legend">
-            {/* <div> */}
-            <legend>From</legend>
-            <input type="date" name="start-date" className="boxx-width" />
-            {/* </div> */}
-          </fieldset>
-          <fieldset className="legend">
-            {/* <div> */}
-            <legend>To</legend>
-            <input type="date" name="end-date" className="boxx-width" />
-            {/* </div> */}
-          </fieldset>
+      <div className="main-container">
+        <form className="container" action="">
+          <div className="container1">
+            <fieldset className="legend">
+              {/* <div> */}
+              <legend>From</legend>
+              <input type="date" name="start-date" className="boxx-width" />
+              {/* </div> */}
+            </fieldset>
+            <fieldset className="legend" >
+              {/* <div> */}
+              <legend>To</legend>
+              <input type="date" name="end-date" className="boxx-width" />
+              {/* </div> */}
+            </fieldset>
+          </div>
+        </form>{" "}
+        <br />
+        <div className="container2">
+          <div className="data-list">
+            <p>Data</p>
+            <p>Data Usage</p>
+          </div>
+          <div className="data-list">
+            <p>02-07-2023</p>
+            <p>1120.70MB</p>
+          </div>
+          <div className="data-list">
+            <p>02-07-2023</p>
+            <p>1120.70MB</p>
+          </div>
         </div>
-      </form>
-      {" "}
-      <br />
-      <div className="container2">
-        <div className="data-list">
-          <p>Data</p>
-          <p>Data Usage</p>
-        </div>
-        <div className="data-list">
-          <p>02-07-2023</p>
-          <p>1120.70MB</p>
-        </div>
-        <div className="data-list">
-          <p>02-07-2023</p>
-          <p>1120.70MB</p>
-        </div>
-      </div>
       </div>
     </div>
   );

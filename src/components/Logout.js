@@ -13,7 +13,7 @@ const Logout = () => {
     <div>
       <Button
         onClick={handleOpenL}
-        sx={{ textTransform: "capitalize", fontSize: "1.2vw", color: "brown" }}
+        sx={{ textTransform: "capitalize", fontSize: "1rem", color: "brown" }}
       >
         Logout
       </Button>
@@ -22,6 +22,7 @@ const Logout = () => {
         onClick={handleCloseL}
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
+        sx={{display:'flex',justifyContent:"center",alignItems:'center'}}
       >
         <Box
           sx={{
@@ -29,10 +30,15 @@ const Logout = () => {
             height: "auto",
             borderRadius: "40px",
             bgcolor: "white",
-            position: "absolute",
-            top: "40%",
-            left: "50%",
+            // position: "absolute",
+            // top: "40%",
+            // left: "10%",
+            // left:'40%',
+            margin:'auto',
             padding: "30px",
+            display:'flex',
+            justifyContent:'center',
+            alignItems:'center'
           }}
         >
           <div>
@@ -41,7 +47,7 @@ const Logout = () => {
             </div>
             <div>
               <Typography
-                fontSize="2vw"
+                fontSize="2rem"
                 textAlign={"center"}
               >
                 Are you sure you want to Log out?
@@ -52,7 +58,7 @@ const Logout = () => {
                     background:
                       "linear-gradient(180deg, #730684 0%, #FF3737 100%)",
                       width:'120px',
-                      fontSize:'1vw',
+                      fontSize:'1rem',
                       fontWeight:'600',
                       color:'white'
 

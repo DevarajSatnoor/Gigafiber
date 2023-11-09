@@ -5,7 +5,15 @@ import MuiDrawer from "@mui/material/Drawer";
 import MuiAppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
 import List from "@mui/material/List";
-import { Avatar, Stack, Menu, MenuItem, Button, Badge } from "@mui/material";
+import {
+  Avatar,
+  Stack,
+  Menu,
+  MenuItem,
+  Button,
+  Badge,
+  Grid,
+} from "@mui/material";
 import CssBaseline from "@mui/material/CssBaseline";
 import Typography from "@mui/material/Typography";
 import Divider from "@mui/material/Divider";
@@ -63,6 +71,8 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 // const color = red[500];
 import { Link } from "react-router-dom";
 import "./Style.css";
+import Hidden from "@mui/material/Hidden";
+import Msidebar from "./Msidebar";
 
 const drawerWidth = 240;
 
@@ -194,32 +204,44 @@ export default function Header() {
           height: "78px",
           display: "flex",
           justifyContent: "center",
+          border: "none",
         }}
       >
-        <Toolbar style={{ paddingLeft: "1px" }}>
-          <IconButton
-            color="inherit"
-            aria-label="open drawer"
-            onClick={handleDrawerOpen}
-            edge="start"
-            sx={{
-              marginRight: 1,
-              ...(open && { display: "none" }),
-            }}
-          >
-            <img
-              src={gig}
-              alt=""
-              style={{
-                paddingLeft: "4px",
-                marginBottom: "3px",
-                marginRight: "0px",
+        <Toolbar
+          style={{
+            display: "flex",
+            justifyContent: "space-between",
+            padding: "0px",
+            border: "1px solid brown",
+            borderRadius: "10px",
+          }}
+        >
+          <Hidden smDown>
+            <IconButton
+              color="inherit"
+              aria-label="open drawer"
+              onClick={handleDrawerOpen}
+              edge="start"
+              sx={{
+                marginRight: 1,
+                ...(open && { display: "none" }),
               }}
-              height={55}
-              width={55}
-            />
-          </IconButton>
-          <Typography variant="h6" noWrap component="div">
+            >
+              <img
+                src={gig}
+                alt=""
+                style={{
+                  paddingLeft: "4px",
+                  marginBottom: "3px",
+                  marginRight: "0px",
+                }}
+                height={55}
+                width={55}
+              />
+            </IconButton>
+          </Hidden>
+          {/* <Typography variant="h6" noWrap component="div"> */}
+          <Hidden smDown>
             <IconButton
               color="inherit"
               aria-label="open drawer"
@@ -237,100 +259,135 @@ export default function Header() {
                   // color: 'linear-gradient(to right , #3c033d, #b50505)',
                   fontSize: 40,
                   position: "relative",
-                  left: "0.8rem",
+                  // left: "0.8rem",
                 }}
               />
             </IconButton>
-            {/* Mini variant drawer */}
-          </Typography>
+          </Hidden>
+          <Hidden smUp>
+            <IconButton>
+              {" "}
+              {/* <img
+                  src={gig}
+                  alt=""
+                  style={{
+                    paddingLeft: "4px",
+                    marginBottom: "3px",
+                    marginRight: "0px",
+                  }}
+                  height={55}
+                  width={55}
+                /> */}
+              <Msidebar />
+            </IconButton>
+          </Hidden>
+          {/* Mini variant drawer */}
+          {/* </Typography> */}
 
           {/* innernav */}
 
-          <div
-            style={{
-              // height: "45px",
-              height: "auto",
-              width: "100%",
-              border: "1px solid rgba(195, 26, 127, 0.2)",
-              borderRadius: "30px",
-            }}
-          >
-            <nav
+          <Hidden smDown>
+            <div
               style={{
-                display: "flex",
-                justifyContent: "space-around",
-                alignItems: "center",
-                // marginTop: "10px",
+                // height: "45px",
+                height: "auto",
+                width: "100%",
+                border: "1px solid rgba(195, 26, 127, 0.2)",
+                borderRadius: "30px",
               }}
             >
-              <a href="#" className="atag" style={{ fontSize: "1.2vw" }}>
-                <img src={home} alt="'" height={20} width={20} />
-                Home
-              </a>
-
-              {/* Bills */}
-
-              <Button
-                className="atag"
-                onClick={handleOpenB}
+              <nav
                 style={{
-                  color: "brown",
-                  textTransform: "capitalize",
-                  fontSize: "1.2vw",
+                  display: "flex",
+                  justifyContent: "space-around",
+                  alignItems: "center",
+                  // marginTop: "10px",
                 }}
               >
-                <img
-                  src={reciept}
-                  alt="'"
-                  color="brown"
-                  height={25}
-                  width={25}
-                />
-                Bills
-              </Button>
-              <Modal
-                open={openB}
-                onClose={handleCloseB}
-                aria-labelledby="modal-modal-title"
-                aria-describedby="modal-modal-description"
-              >
-                <Box sx={styleB}>
-                  <Bill />
-                </Box>
-              </Modal>
+                <a href="#" className="atag" style={{ fontSize: "1.2vw" }}>
+                  <img src={home} alt="'" height={20} width={20} />
+                  Home
+                </a>
 
-              {/* bandwidth */}
-              <div>
-                <Bandwidth />
-              </div>
+                {/* Bills */}
 
-              <a href="" className="atag" style={{ fontSize: "1.2vw" }}>
-                <img src={card} alt="'" />
-                Change Payterm
-              </a>
+                <Button
+                  className="atag"
+                  onClick={handleOpenB}
+                  style={{
+                    color: "brown",
+                    textTransform: "capitalize",
+                    fontSize: "1.2vw",
+                  }}
+                >
+                  <img
+                    src={reciept}
+                    alt="'"
+                    color="brown"
+                    height={25}
+                    width={25}
+                  />
+                  Bills
+                </Button>
+                <Modal
+                  open={openB}
+                  onClose={handleCloseB}
+                  aria-labelledby="modal-modal-title"
+                  aria-describedby="modal-modal-description"
+                >
+                  <Box sx={styleB}>
+                    <Bill />
+                  </Box>
+                </Modal>
 
-              {/* offers */}
+                {/* bandwidth */}
+                <div>
+                  <Bandwidth />
+                </div>
 
-              <div>
-                <Offers />
-              </div>
-              <Button
-                style={{
-                  // height: "30px",
-                  height: "auto",
-                  width: "auto",
-                  border: "1px solid",
-                  borderRadius: "30px",
-                  background:
-                    "linear-gradient(180deg, #730684 0%, #B50510 100%)",
-                  color: "whitesmoke",
-                  fontSize: "1vw",
-                }}
-              >
-                New Connection
-              </Button>
-            </nav>
-          </div>
+                <a href="" className="atag" style={{ fontSize: "1.2vw" }}>
+                  <img src={card} alt="'" />
+                  Change Payterm
+                </a>
+
+                {/* offers */}
+
+                <div>
+                  <Offers />
+                </div>
+                <Button
+                  style={{
+                    // height: "30px",
+                    height: "auto",
+                    width: "auto",
+                    border: "1px solid",
+                    borderRadius: "30px",
+                    background:
+                      "linear-gradient(180deg, #730684 0%, #B50510 100%)",
+                    color: "whitesmoke",
+                    fontSize: "1vw",
+                  }}
+                >
+                  New Connection
+                </Button>
+              </nav>
+            </div>
+          </Hidden>
+
+          {/* <Hidden smUp>
+            <input
+              type="text"
+              placeholder="Search..."
+              autoComplete="on"
+              style={{
+                width: "140px",
+                height: "30px",
+                padding: "10px",
+                borderRadius: "10px",
+                marginLeft: "30px",
+              }}
+            />
+          </Hidden> */}
 
           <span style={{ width: "6rem" }}></span>
 
@@ -339,10 +396,6 @@ export default function Header() {
           <div>
             <Notification />
           </div>
-
-          {/* profile */}
-
-          <div></div>
 
           {/* menu */}
 
@@ -372,18 +425,18 @@ export default function Header() {
                   onClick={handleClosep}
                   sx={{
                     color: "brown",
-                    fontSize: "1.2vw",
+                    fontSize: "1rem",
                     textTransform: "capitalize",
                   }}
                 >
-                  My account
+                  My Menu
                 </MenuItem>
               </Button>{" "}
               <br />
               <Button sx={{ padding: "0.5px" }}>
                 <MenuItem
                   // onClick={handleClosep}
-                  sx={{ color: "brown", fontSize: "1.3vw" }}
+                  sx={{ color: "brown", fontSize: "1rem" }}
                 >
                   <Referal />
                 </MenuItem>
@@ -395,197 +448,213 @@ export default function Header() {
           </div>
         </Toolbar>
       </AppBar>
-
-      <Drawer variant="permanent" open={open} className="drawer">
-        <DrawerHeader sx={{ mt: "8px", mb: "8px" }}>
-          <IconButton onClick={handleDrawerClose}>
-            {/* {theme.direction === "rtl" ? (
+      <Hidden smDown>
+        <Drawer variant="permanent" open={open} className="drawer">
+          <DrawerHeader sx={{ mt: "8px", mb: "8px" }}>
+            <IconButton onClick={handleDrawerClose}>
+              {/* {theme.direction === "rtl" ? (
               <ChevronRightIcon />
             ) : (
               <ChevronLeftIcon />
             )} */}
-            <img src={bglogo} alt="" height={48} width={200} />
-          </IconButton>
-        </DrawerHeader>
-        <Divider />
-        <List className="list" sx={{ "::-webkit-scrollbar": { width: "5px" } }}>
-          {["Plans", "Data Usage"].map((text, index) => (
-            <ListItem key={text} disablePadding sx={{ display: "block" }}>
-              <ListItemButton
-                sx={{
-                  minHeight: 48,
-                  justifyContent: open ? "initial" : "center",
-                  px: 2.3,
-                }}
-              >
-                <ListItemIcon
+              <img src={bglogo} alt="" height={48} width={200} />
+            </IconButton>
+          </DrawerHeader>
+          <Divider />
+          <List
+            className="list"
+            sx={{ "::-webkit-scrollbar": { width: "5px" } }}
+          >
+            {["Plans", "Data Usage"].map((text, index) => (
+              <ListItem key={text} disablePadding sx={{ display: "block" }}>
+                <ListItemButton
                   sx={{
-                    minWidth: 0,
-                    mr: open ? 2 : "auto",
-                    justifyContent: "center",
-                    // padding: 0,
-                    // px:'2.3'
+                    minHeight: 48,
+                    justifyContent: open ? "initial" : "center",
+                    px: 2.3,
                   }}
                 >
-                  {index % 2 === 0 ? (
-                    <GridViewOutlined
-                      className="grid"
-                      sx={{ height: "38px", width: "38px", color: "brown" }}
-                    />
-                  ) : (
-                    <Link to={"/Datausage"}>
-                      <img src={data} />
-                    </Link>
-                  )}
-                </ListItemIcon>
-                <ListItemText primary={text} sx={{ opacity: open ? 1 : 0 }} />
-              </ListItemButton>
-            </ListItem>
-          ))}
-        </List>
-        <List className="list">
-          {["Setting", "About us"].map((text, index) => (
-            <ListItem key={text} disablePadding sx={{ display: "block" }}>
-              <ListItemButton
-                sx={{
-                  minHeight: 48,
-                  justifyContent: open ? "initial" : "center",
-                  px: 2.4,
-                }}
-              >
-                <ListItemIcon
-                  sx={{
-                    minWidth: 0,
-                    mr: open ? 2 : "auto",
-                    justifyContent: "center",
-                  }}
-                >
-                  {index % 2 === 0 ? (
-                    <Link to={"/Setting"}>
-                      <img src={setting} />
-                    </Link>
-                  ) : (
-                    <img src={about} />
-                  )}
-                </ListItemIcon>
-                <ListItemText primary={text} sx={{ opacity: open ? 1 : 0 }} />
-              </ListItemButton>
-            </ListItem>
-          ))}
-        </List>
-        <List className="list">
-          {["Privacy Policy", "Speed Test"].map((text, index) => (
-            <ListItem
-              key={text}
-              disablePadding
-              sx={{ display: "block", marginTop: "0px", marginBottom: "0px" }}
-            >
-              <ListItemButton
-                sx={{
-                  Height: 48,
-                  justifyContent: open ? "initial" : "center",
-                  px: 1.7,
-                  // marginBottom: 0,
-                }}
-              >
-                <ListItemIcon
-                  sx={{
-                    minWidth: 0,
-                    mr: open ? 2 : "auto",
-                    justifyContent: "center",
-                  }}
-                >
-                  {index % 2 === 0 ? (
-                    <Link to={"/Agreement"}>
-                      <img src={privacy} />
-                    </Link>
-                  ) : (
-                    <Link to={'/Speed'}>
-                      <SpeedIcon
-                        style={{
-                          height: "33px",
-                          width: "33px",
-                          color: "brown",
-                        }}
+                  <ListItemIcon
+                    sx={{
+                      minWidth: 0,
+                      mr: open ? 2 : "auto",
+                      justifyContent: "center",
+                      // padding: 0,
+                      // px:'2.3'
+                    }}
+                  >
+                    {index % 2 === 0 ? (
+                      <GridViewOutlined
+                        className="grid"
+                        sx={{ height: "38px", width: "38px", color: "brown" }}
                       />
+                    ) : (
+                      <Link to={"/Datausage"}>
+                        <img src={data} />
+                      </Link>
+                    )}
+                  </ListItemIcon>
+                  <ListItemText primary={text} sx={{ opacity: open ? 1 : 0 }} />
+                </ListItemButton>
+              </ListItem>
+            ))}
+          </List>
+          <List className="list">
+            {["Setting", "About us"].map((text, index) => (
+              <ListItem key={text} disablePadding sx={{ display: "block" }}>
+                <ListItemButton
+                  sx={{
+                    minHeight: 48,
+                    justifyContent: open ? "initial" : "center",
+                    px: 2.4,
+                  }}
+                >
+                  <ListItemIcon
+                    sx={{
+                      minWidth: 0,
+                      mr: open ? 2 : "auto",
+                      justifyContent: "center",
+                    }}
+                  >
+                    {index % 2 === 0 ? (
+                      <Link to={"/Setting"}>
+                        <img src={setting} />
+                      </Link>
+                    ) : (
+                      <img src={about} />
+                    )}
+                  </ListItemIcon>
+                  <ListItemText primary={text} sx={{ opacity: open ? 1 : 0 }} />
+                </ListItemButton>
+              </ListItem>
+            ))}
+          </List>
+          <List className="list">
+            {["Privacy Policy", "Speed Test"].map((text, index) => (
+              <ListItem
+                key={text}
+                disablePadding
+                sx={{ display: "block", marginTop: "0px", marginBottom: "0px" }}
+              >
+                <ListItemButton
+                  sx={{
+                    Height: 48,
+                    justifyContent: open ? "initial" : "center",
+                    px: 1.7,
+                    // marginBottom: 0,
+                  }}
+                >
+                  <ListItemIcon
+                    sx={{
+                      minWidth: 0,
+                      mr: open ? 2 : "auto",
+                      justifyContent: "center",
+                    }}
+                  >
+                    {index % 2 === 0 ? (
+                      <Link to={"/Agreement"}>
+                        <img src={privacy} />
+                      </Link>
+                    ) : (
+                      <Link to={"/Speed"}>
+                        <SpeedIcon
+                          style={{
+                            height: "33px",
+                            width: "33px",
+                            color: "brown",
+                          }}
+                        />
+                      </Link>
+                    )}
+                  </ListItemIcon>
+                  <ListItemText
+                    primary={text}
+                    sx={{ opacity: open ? 2 : 0, mt: "0px" }}
+                  />
+                </ListItemButton>
+              </ListItem>
+            ))}
+          </List>
+          <List className="list">
+            {["Log out"].map((text, index) => (
+              <ListItem key={text} disablePadding sx={{ display: "block" }}>
+                <ListItemButton
+                  sx={{
+                    Height: 48,
+                    justifyContent: open ? "initial" : "center",
+                    // mt:0,
+                    px: 2.6,
+
+                    gap: "11px",
+                  }}
+                >
+                  <ListItemIcon
+                    sx={{
+                      minWidth: 0,
+                      mr: openn ? 2 : "auto",
+                      justifyContent: "center",
+                    }}
+                  >
+                    {/* {index % 2 === 0 ? (<img src={logout} />) : (<img src={logout} />)} */}
+                    <Link to={"/logout"}>
+                      {" "}
+                      <img src={logout} alt="" height={30} width={29} />
                     </Link>
-                  )}
-                </ListItemIcon>
-                <ListItemText
-                  primary={text}
-                  sx={{ opacity: open ? 2 : 0, mt: "0px" }}
-                />
-              </ListItemButton>
-            </ListItem>
-          ))}
-        </List>
-        <List className="list">
-          {["Log out"].map((text, index) => (
-            <ListItem key={text} disablePadding sx={{ display: "block" }}>
-              <ListItemButton
-                sx={{
-                  Height: 48,
-                  justifyContent: open ? "initial" : "center",
-                  // mt:0,
-                  px: 2.6,
-
-                  gap: "11px",
-                }}
-              >
-                <ListItemIcon
+                  </ListItemIcon>
+                  <ListItemText primary={text} sx={{ opacity: open ? 2 : 0 }} />
+                </ListItemButton>
+              </ListItem>
+            ))}
+          </List>
+          <Divider />
+          <List className="list">
+            {["Customer care"].map((text, index) => (
+              <ListItem key={text} disablePadding sx={{ display: "block" }}>
+                <ListItemButton
                   sx={{
-                    minWidth: 0,
-                    mr: openn ? 2 : "auto",
-                    justifyContent: "center",
+                    minHeight: 48,
+                    justifyContent: open ? "initial" : "center",
+                    px: 2.5,
+                    background:
+                      "linear-gradient(180deg, #730684 0%, #B50505 100%)",
                   }}
                 >
-                  {/* {index % 2 === 0 ? (<img src={logout} />) : (<img src={logout} />)} */}
-                  <Link to={"/logout"}>
-                    {" "}
-                    <img src={logout} alt="" height={30} width={29} />
-                  </Link>
-                </ListItemIcon>
-                <ListItemText primary={text} sx={{ opacity: open ? 2 : 0 }} />
-              </ListItemButton>
-            </ListItem>
-          ))}
-        </List>
-        <Divider />
-        <List className="list">
-          {["Customer care"].map((text, index) => (
-            <ListItem key={text} disablePadding sx={{ display: "block" }}>
-              <ListItemButton
-                sx={{
-                  minHeight: 48,
-                  justifyContent: open ? "initial" : "center",
-                  px: 2.5,
-                  background:
-                    "linear-gradient(180deg, #730684 0%, #B50505 100%)",
-                }}
-              >
-                <ListItemIcon
-                  sx={{
-                    minWidth: 0,
-                    mr: open ? 1 : "auto",
-                    // justifyContent: "center",
-                    justifyContent: "normal",
-                  }}
-                >
-                  {/* {index % 2 === 0 ? (<ForumOutlinedIcon />) : (<ForumOutlinedIcon />)} */}
+                  <ListItemIcon
+                    sx={{
+                      minWidth: 0,
+                      mr: open ? 1 : "auto",
+                      // justifyContent: "center",
+                      justifyContent: "normal",
+                    }}
+                  >
+                    {/* {index % 2 === 0 ? (<ForumOutlinedIcon />) : (<ForumOutlinedIcon />)} */}
 
-                  <ForumOutlinedIcon />
-                </ListItemIcon>
-                <ListItemText primary={text} sx={{ opacity: open ? 1 : 0 }} />
-              </ListItemButton>
-            </ListItem>
-          ))}
-        </List>
-      </Drawer>
-      <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
+                    <ForumOutlinedIcon />
+                  </ListItemIcon>
+                  <ListItemText primary={text} sx={{ opacity: open ? 1 : 0 }} />
+                </ListItemButton>
+              </ListItem>
+            ))}
+          </List>
+        </Drawer>
+      </Hidden>
+      <Box
+        component="main"
+        sx={{ flexGrow: 1, p: 1, width: "100%", overflow: "hidden" }}
+      >
         <DrawerHeader />
-        <Stack spacing={3} direction={"row"} width="100%" mt={1}>
-          <Feed />
-          <Rightbar />
+        <Stack
+          direction={{ xs: "column", sm: "column", lg: "row", md: "row" }}
+          // width="100%"
+          marginTop={10}
+          spacing={2}
+        >
+          <Grid xs={10} sm={10} md={6} lg={6}>
+            <Feed />
+          </Grid>
+          <Grid xs={10} sm={10} md={6} lg={6}>
+            <Rightbar />
+          </Grid>
         </Stack>
       </Box>
     </Box>

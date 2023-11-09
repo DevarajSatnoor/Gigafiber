@@ -26,7 +26,8 @@ const styleN = {
   left: "50%",
   // height:'100vh',
   transform: "translate(-50%, -50%)",
-  width: "40%",
+  width: "80%",
+  height: "auto",
   bgcolor: "rgba(207, 216, 220, 1)",
   // border: "2px solid #000",
   boxShadow: 24,
@@ -60,23 +61,22 @@ const Notification = () => {
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
       >
-        <Box style={styleN}  bgcolor="white">
+        <Box style={styleN} bgcolor="white">
           {/* <Notification /> */}
-          <div style={{ borderRadius: "20px" }}>
-            <CssBaseline />
+          <div style={{ borderRadius: "20px", width: "100%" }}>
+            {/* <CssBaseline /> */}
             <div className="grid-container">
-              <Typography variant="h5" className="sai">
+              <Typography variant="h5" className="sai" textAlign={"center"}>
                 Notification
               </Typography>
-              <Icons className="iconsgrid">
-                <DraftsOutlinedIcon color="secondary" />
-              </Icons>
-              <Icons className="iconsgrid" onClick={handleCloseN}>
-                {/* <Button onClick={handleCloseN}> */}
-                <ClearOutlinedIcon onClose={handleCloseN} color="secondary" />
-                {/* <Typography onClick={handleCloseN}>X</Typography> */}
-                {/* </Button> */}
-              </Icons>
+              <div style={{ gap: "10px", display: "flex" }}>
+                <Icons className="iconsgrid">
+                  <DraftsOutlinedIcon color="secondary" />
+                </Icons>
+                <Icons className="iconsgrid" onClick={handleCloseN}>
+                  <ClearOutlinedIcon onClose={handleCloseN} color="secondary" />
+                </Icons>
+              </div>
             </div>
             <Box padding={1.6}>
               <List

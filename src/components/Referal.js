@@ -14,7 +14,7 @@ const style = {
   top: "50%",
   left: "50%",
   transform: "translate(-50%, -50%)",
-  width: 600,
+  width: '80%',
   //   bgcolor: 'background.paper',
   // border: '2px solid #000',
   boxShadow: 24,
@@ -33,7 +33,7 @@ export default function BasicModal() {
     <div>
       <Button
         style={{
-          fontSize: "1.2vw",
+          fontSize: "1rem",
           textTransform: "capitalize",
           color: "brown",
         }}
@@ -54,9 +54,10 @@ export default function BasicModal() {
             </Button>
             <p
               style={{
-                fontSize: "2vw",
-                position: "relative",
-                left: "126px",
+                fontSize: "1rem",
+                // position: "relative",
+                // left: "126px",
+                textAlign:'center',
                 color: "#FFFFFF ",
               }}
             >
@@ -65,24 +66,26 @@ export default function BasicModal() {
           </div>
           <div
             style={{
-              display: "inline-block",
+              display: "flex",
+              justifyContent:'center',
+              alignItems:'center',
               // border: "1px solid",
               background: "#9797972B",
               borderRadius: "10px",
               width: "200px",
-              position: "relative",
-              left: "30%",
+              // position: "relative",
+              // left: "30%",
               // padding:'0px'
             }}
           >
             <p
-              style={{ textAlign: "center", fontSize: "2vw", color: "#DCF88E" }}
+              style={{ textAlign: "center", fontSize: "1rem", color: "#DCF88E" }}
             >
               120
-            </p>
+            </p> <br />
             <p
               style={{
-                fontSize: "1.2vw",
+                fontSize: "1rem",
                 padding: "0px",
                 color: "#DADADA",
                 textAlign: "center",

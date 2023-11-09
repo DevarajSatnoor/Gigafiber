@@ -15,8 +15,8 @@
 }
 
 .animation{
-    width:440px;
-    height: 260px;
+    width:90%;
+    height: 210px;
     animation-name: Ani;
     animation-duration: 20s;
     animation-delay: 1s;
@@ -53,22 +53,27 @@
 } */
 
 .legend{
-    width: 200px;
+    width: 90%;
     height: 40px;
-}
+    max-width: 220px;
+    font-size: 1.2rem;
+  }
 
 .boxx-width[type]{
-    width: 200px;
-}
-
-.boxx-width[type]{
+    width: 80%;
+    max-width: 200px;
     color: brown;
+    font-size: 1rem;
 }
+
+
 
 .container1{
     display: flex;
     justify-content: space-around;
     align-items: center;
+    direction: var(sm);
+    
 }
 
 .container{
@@ -105,7 +110,7 @@
 .data-list{
     display: flex;
     justify-content: space-around;
-    font-size: 1.3vw;
+    font-size: 1rem;
     font-family: 'Poppins',sans-serif;
     padding: 5px;
     /* font-family: Poppins; */
@@ -146,5 +151,7 @@
     /* font-family: 'Poppins',sans-serif; */
     font-size: 2vw;
   }
+
+  
 
 

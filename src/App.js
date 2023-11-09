@@ -10,7 +10,7 @@ import RoutesCompo from "./components/RoutesCompo";
 function App() {
   return (
     <>
-        {/* <Header /> */}
+        {/* <Header /> */} 
         <RoutesCompo/>
     </>
   );
