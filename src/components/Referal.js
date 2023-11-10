@@ -7,14 +7,12 @@ import "./Style.css";
 import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 import FlipToFrontIcon from "@mui/icons-material/FlipToFront";
 
-
-
 const style = {
   position: "absolute",
   top: "50%",
   left: "50%",
   transform: "translate(-50%, -50%)",
-  width: '80%',
+  width: "80%",
   //   bgcolor: 'background.paper',
   // border: '2px solid #000',
   boxShadow: 24,
@@ -48,52 +46,59 @@ export default function BasicModal() {
         aria-describedby="modal-modal-description"
       >
         <Box sx={style}>
-          <div style={{ display: "flex" }}>
             <Button onClick={handleClose}>
               <ArrowBackIosIcon color="white" />
             </Button>
+          <div style={{ display: "flex",flexDirection:'column',alignItems:"center",justifyContent:'center' }}>
             <p
               style={{
                 fontSize: "1rem",
                 // position: "relative",
                 // left: "126px",
-                textAlign:'center',
+                textAlign: "center",
                 color: "#FFFFFF ",
               }}
             >
               Get Credits
             </p>
-          </div>
-          <div
-            style={{
-              display: "flex",
-              justifyContent:'center',
-              alignItems:'center',
-              // border: "1px solid",
-              background: "#9797972B",
-              borderRadius: "10px",
-              width: "200px",
-              // position: "relative",
-              // left: "30%",
-              // padding:'0px'
-            }}
-          >
-            <p
-              style={{ textAlign: "center", fontSize: "1rem", color: "#DCF88E" }}
-            >
-              120
-            </p> <br />
-            <p
+            {/* </div> */}
+            <div
               style={{
-                fontSize: "1rem",
-                padding: "0px",
-                color: "#DADADA",
-                textAlign: "center",
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                flexDirection: "column",
+                // border: "1px solid",
+                background: "#9797972B",
+                borderRadius: "10px",
+                width: "200px",
+                // position: "relative",
+                // left: "30%",
+                // padding:'0px'
               }}
             >
-              Earned Credits
-            </p>
-          </div>{" "}
+              <p
+                style={{
+                  textAlign: "center",
+                  fontSize: "1rem",
+                  color: "#DCF88E",
+                }}
+              >
+                120
+              </p>{" "}
+              <br />
+              <p
+                style={{
+                  fontSize: "1rem",
+                  padding: "0px",
+                  color: "#DADADA",
+                  textAlign: "center",
+                }}
+              >
+                Earned Credits
+              </p>
+            </div>
+          </div>
           <br /> <br />
           <Box className="refer-rainbow">
             <div>
@@ -120,7 +125,7 @@ export default function BasicModal() {
                   background: "darkgrey",
                 }}
               >
-                <span style={{position:'relative',top:'8px'}}>
+                <span style={{ position: "relative", top: "8px" }}>
                   <FlipToFrontIcon />
                 </span>
                 GBD21

@@ -1,0 +1,8 @@
+.profile-parent{
+    width: 100%;
+    background-color: antiquewhite;
+    /* borderRadius: 10, */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

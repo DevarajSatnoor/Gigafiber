@@ -8,42 +8,46 @@ import {
   Typography,
   IconButton,
 } from "@mui/material";
-import React from "react";
+import React, { useState } from "react";
 import cam from "./images/cam.png";
-
+import { useNavigate } from "react-router-dom";
+import ArrowBackIcon from "@mui/icons-material/ArrowBack";
+// import "./Profile.css"
 const styleP = {
   position: "absolute",
   top: "50%",
   left: "50%",
   transform: "translate(-50%, -50%)",
   width: "100%",
-  height:'auto',
+  height: "auto",
   bgcolor: "whitesmoke",
+
   // border: "2px solid #000",
   // boxShadow: 24,
   // p: 4,
-  borderRadius: 10,
-  display: "flex",
-  flexDirection: "column",
-  alignItems: "center",
+  
   // padding: "200px",
   // boxShadow: "0 14.010417938232422 42.031253814697266 0 #0000000D inset",
 };
 
 const Profile = () => {
-  const [openP, setOpenP] = React.useState(false);
+  const [openP, setOpenP] = useState(false);
   const handleOpenP = () => setOpenP(true);
   const handleCloseP = () => setOpenP(false);
 
   const pdetails = [
     { a: "Contact No.", b: "1234567899" },
     { a: "Email", b: "d&700@gmail.com" },
+    { a: "Email", b: "d&700@gmail.com" },
+    { a: "Email", b: "d&700@gmail.com" },
     { a: "Address", b: <textfield>frtyuiggtyui</textfield> },
   ];
 
+  const navigate = useNavigate();
+
   return (
     // <div>
-    <Box width={'100%'}>
+    <Box width={"100%"}>
       <Button
         id="basic-button"
         aria-controls={openP ? "basic-menu" : undefined}
@@ -62,12 +66,17 @@ const Profile = () => {
         open={openP}
         onClose={handleCloseP}
       >
-        <Box sx={styleP}>
+        {/* <div> */}
+          
+        <Box className={styleP} > 
           <div
             className="container"
-            style={{ padding: "20px", backgroundAttachment: "fixed" }}
+            style={{ padding: "20px" }}
           >
             <div className="photocontainer">
+              <Button onClick={handleCloseP} sx={{position:'absolute',left:'10%',top:'5%'}}>
+                <ArrowBackIcon />
+              </Button>
               <img
                 src="https://cdn.pixabay.com/photo/2023/09/18/13/46/building-8260627_640.jpg"
                 alt="img"
@@ -93,7 +102,7 @@ const Profile = () => {
                   marginBottom: "0px",
                   color: "#055EB5",
                   fontSize: "3rem",
-                  fontFamily:'Poppins'
+                  fontFamily: "Poppins",
                 }}
               >
                 Devaraj Satnoor
@@ -101,7 +110,7 @@ const Profile = () => {
               <Typography fontSize="2rem">Software Engineer</Typography>
             </div>
             {/* </div> */}
-            <div >
+            <div>
               {/* <div style={{ display: "flex", gap: "0.5rem" }}>
               <Avatar src="" alt="" />
               <span style={{ fontSize: "1rem" }}>Contact No</span>
@@ -117,13 +126,19 @@ const Profile = () => {
               {/* <Typography variant="h6">12345678</Typography> */}
               <List>
                 <div
-                  style={{display: "flex",flexDirection:'column',textAlignLast:'auto',fontSize:'1rem',fontFamily:'Poppins'}}
+                  style={{
+                    display: "flex",
+                    flexDirection: "column",
+                    textAlignLast: "auto",
+                    fontSize: "1rem",
+                    fontFamily: "Poppins",
+                  }}
                 >
                   {pdetails.map((pdetail, index) => (
                     <ListItem key={index}>
                       <ListItem>
                         <IconButton></IconButton>
-                        <p >{pdetail.a}</p>
+                        <p>{pdetail.a}</p>
                       </ListItem>
                       <p>{pdetail.b}</p>
                     </ListItem>
@@ -132,7 +147,8 @@ const Profile = () => {
               </List>
             </div>
           </div>
-        </Box>
+          </Box>
+        {/* </div> */}
       </Modal>
     </Box>
   );

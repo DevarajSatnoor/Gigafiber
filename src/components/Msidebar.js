@@ -1,16 +1,17 @@
-import * as React from 'react';
-import Box from '@mui/material/Box';
-import { List,Divider } from '@mui/material';
-import Button from '@mui/material/Button';
-import Typography from '@mui/material/Typography';
-import Modal from '@mui/material/Modal';
-import logo from './images/giglog.png'
+import * as React from "react";
+import Box from "@mui/material/Box";
+import { List, Divider } from "@mui/material";
+import Button from "@mui/material/Button";
+import Typography from "@mui/material/Typography";
+import Modal from "@mui/material/Modal";
+import logo from "./images/giglog.png";
 import GridViewOutlined from "@mui/icons-material/GridViewOutlined";
 import { Link } from "react-router-dom";
 import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
-import ListItemText from "@mui/material/ListItemText";import data from "./images/Data Backup.png";
+import ListItemText from "@mui/material/ListItemText";
+import data from "./images/Data Backup.png";
 import ForumOutlinedIcon from "@mui/icons-material/ForumOutlined";
 import privacy from "./images/priivacy1.png";
 import speed from "./images/Speed.png";
@@ -18,31 +19,28 @@ import logout from "./images/logoutcurve.png";
 import share from "./images/share.png";
 import setting from "./images/setting.png";
 import about from "./images/about.svg";
-import Logout from './Logout';
+import Logout from "./Logout";
 import SpeedIcon from "@mui/icons-material/Speed";
 
-
-
-
 const style = {
-  position: 'absolute',
-  top:'145px',
-  left:'5px',
+  position: "absolute",
+  top: "145px",
+  left: "5px",
   // top: '-190px',
   // left: '25%',
   // transform: 'translate(-50%, -50%)',
   width: 300,
   // height:'auto',
   // overFlow:'auto',
-  bgcolor: 'background.paper',
-  border: '2px solid #000',
+  bgcolor: "background.paper",
+  border: "0.1px solid #000",
   boxShadow: 24,
   p: 4,
-  fontFamily:'Poppins',
-  fontSize:'2rem',
-  display:'flex',
-  flexDirection:'column',
-  justifyContent:'center',
+  fontFamily: "Poppins",
+  fontSize: "2rem",
+  display: "flex",
+  flexDirection: "column",
+  justifyContent: "center",
   // alignItems:'center'
 };
 
@@ -52,17 +50,19 @@ export default function Msidebar() {
   const handleClose = () => setOpen(false);
 
   return (
-    <div>
-      <Button onClick={handleOpen}><img src={logo} height={55} width={50} alt="" /></Button>
+    <div style={{height:'auto',overflow:'scroll'}}>
+      <Button onClick={handleOpen}>
+        <img src={logo} height={55} width={50} alt="" />
+      </Button>
       <Modal
         open={open}
         onClose={handleClose}
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
-        sx={{display:'flex',justifyContent:'center',alignItems:'center'}}
+        sx={{ display: "flex", justifyContent: "center", alignItems: "center" }}
       >
         <Box sx={style}>
-        <List>
+          <List sx={{overflow:'scroll'}}>
             {["Plans", "Data Usage"].map((text, index) => (
               <ListItem key={text} disablePadding sx={{ display: "block" }}>
                 <ListItemButton
@@ -125,7 +125,7 @@ export default function Msidebar() {
               </ListItem>
             ))}
           </List>
-          <List >
+          <List>
             {["Privacy Policy", "Speed Test"].map((text, index) => (
               <ListItem
                 key={text}
@@ -190,7 +190,6 @@ export default function Msidebar() {
                       justifyContent: "center",
                     }}
                   >
-                    
                     <Link to={"/logout"}>
                       {" "}
                       <img src={logout} alt="" height={30} width={29} />

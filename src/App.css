@@ -118,7 +118,7 @@
   .profile-details{
     display: flex;
     justify-content: space-around;
-    overflow: hidden;
+    /* overflow: hidden; */
   }
   
   .grid{

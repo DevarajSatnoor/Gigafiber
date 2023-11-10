@@ -286,7 +286,7 @@ export default function Header() {
 
           {/* innernav */}
 
-          <Hidden smDown>
+          <Hidden  smDown>
             <div
               style={{
                 // height: "45px",
@@ -640,7 +640,7 @@ export default function Header() {
       </Hidden>
       <Box
         component="main"
-        sx={{ flexGrow: 1, p: 1, width: "100%", overflow: "hidden" }}
+        sx={{ flexGrow: 1, p: 1, width: "90%" ,height:'auto'}}
       >
         <DrawerHeader />
         <Stack
